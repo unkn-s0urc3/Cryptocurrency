@@ -61,6 +61,7 @@ CREATE TABLE exchangers (
         exchanger_url ~* '^http://[a-z2-7]{56}\.onion(:\d+)?(/.*)?$'
     ),
     CHECK (length(exchanger_name) > 2),
+    updated_at TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW(),
     created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW()
 );
 
@@ -72,7 +73,6 @@ CREATE TABLE wallet_transactions (
     amount NUMERIC(20, 8) NOT NULL CHECK (amount >= 0),
     fee NUMERIC(20, 8) NOT NULL CHECK (fee >= 0),
     status_id SMALLINT NOT NULL REFERENCES statuses(id),
-    updated_at TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW(),
     created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW(),
     CHECK (fee <= amount),
     CHECK (wallet_address IS DISTINCT FROM to_address)
