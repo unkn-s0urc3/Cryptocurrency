@@ -36,7 +36,6 @@
     символ - varchar(10) UNIQUE;
     название - varchar(30) UNIQUE;
     контр._адрес - varchar(70) UNIQUE;
-    дробность - smallint;
 }
 
 балансы {
