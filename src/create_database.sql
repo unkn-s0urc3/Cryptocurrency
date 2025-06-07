@@ -85,6 +85,7 @@ CREATE TABLE exchange_transactions (
         ON DELETE RESTRICT ON UPDATE RESTRICT,
     amount NUMERIC(20, 8) NOT NULL,                 -- Сумма
     fee NUMERIC(20, 8) NOT NULL,                    -- Комиссия
+    updated_at TIMESTAMP WITHOUT TIME ZONE,
     created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT now()
 );
 
@@ -100,5 +101,6 @@ CREATE TABLE internal_transactions (
     token_id SMALLINT NOT NULL REFERENCES tokens(id),
     amount NUMERIC(20, 8) NOT NULL,
     fee NUMERIC(20, 8) NOT NULL,
+    updated_at TIMESTAMP WITHOUT TIME ZONE,
     created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT now()
 );
