@@ -1,0 +1,80 @@
+статусы {
+    🔑код - smallserial;
+    название - varchar(30) UNIQUE;
+}
+
+статусы транзакций {
+    🔑код - smallserial;
+    название - varchar(30) UNIQUE;
+}
+
+блокчейны {
+    🔑код - smallserial;
+    символ - varchar(10) UNIQUE;
+    название - varchar(30) UNIQUE;
+}
+
+пользователи {
+    🔑имя - varchar(30);
+    эл. почта - varchar(50) UNIQUE;
+    🔗статус_код - smallint;
+    дата_обнов. - timestamp without time zone;
+    дата_созд. - timestamp without time zone default now();
+}
+
+кошельки {
+    🔑адрес - varchar(70);
+    🔗пользов._имя - varchar(30);
+    🔗статус_код - smallint;
+    дата_обнов. - timestamp without time zone;
+    дата_созд. - timestamp without time zone default now();
+}
+
+токены {
+    🔑код - smallserial;
+    🔗блок._код - smallint;
+    символ - varchar(10) UNIQUE;
+    название - varchar(30) UNIQUE;
+    контр._адрес - varchar(70) UNIQUE;
+    дробность - smallint;
+}
+
+балансы {
+    🔑токен_код - smallint;
+    🔑кошел._адр. - varchar(70);
+    сумма - numeric(38, 0);
+    дата_обнов. - timestamp without time zone;
+    дата_созд. - timestamp without time zone default now();
+}
+
+обменники {
+    🔑код - smallserial;
+    название - varchar(50) UNIQUE;
+    ссылка - varchar(100) UNIQUE;
+    🔗статус_код smallint;
+    дата_обнов. - timestamp without time zone;
+    дата_созд. - timestamp without time zone default now();
+}
+
+транзакции с обменииками {
+    🔑хэш - varchar(70);
+    🔗кошел._адр. - varchar(70);
+    🔗обм._код - smallint;
+    адрес_получ. - varchar(70);
+    🔗стат_транз_код - smallint;
+    🔗токен_код - smallint;
+    сумма - numeric(38, 0);
+    комиссия - numeric(38, 0);
+    дата_созд. - timestamp without time zone default now();
+}
+
+транзакции между внут. кошельками {
+    🔑хэш - varchar(70);
+    🔗адрес_отп. - varchar(70);
+    🔗адрес_пол. - varchar(70);
+    🔗стат_транз_код - smallint;
+    🔗токен_код - smallint;
+    сумма - numeric(38, 0);
+    комиссия - numeric(38, 0);
+    дата_созд. - timestamp without time zone default now();
+}
