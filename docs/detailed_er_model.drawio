@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="-FMv2WLcT0FM3ifV24zs" name="Page-1">
-        <mxGraphModel dx="1458" dy="1711" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="2236" dy="1925" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -35,7 +35,7 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="78" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;дата_созд.&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="-20" y="920" width="90" height="40" as="geometry"/>
+                    <mxGeometry x="-20" y="960" width="90" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="216" style="edgeStyle=none;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;" parent="1" source="79" target="97" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -99,7 +99,7 @@
                 <mxCell id="96" value="транзакции между&lt;div&gt;внут. кошельками&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="280" y="520" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="97" value="транзакции с обменииками" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="97" value="транзакции с обменниками" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="120" y="520" width="120" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="98" style="edgeStyle=none;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;" parent="1" source="99" target="140" edge="1">
@@ -570,6 +570,18 @@
                 </mxCell>
                 <mxCell id="290" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;🔗стат_тр_код&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="480" y="800" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="293" style="edgeStyle=none;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="292" target="97">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="292" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;дата_обнов.&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-20" y="920" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="295" style="edgeStyle=none;html=1;entryX=1;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="294" target="96">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="294" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;дата_обнов.&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="570" y="690" width="90" height="40" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

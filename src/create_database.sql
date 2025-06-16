@@ -15,7 +15,7 @@ CREATE TABLE blockchains (
     id SMALLSERIAL PRIMARY KEY,
     symbol VARCHAR(10) UNIQUE NOT NULL,        -- Короткое имя (ETH, BTC)
     blockchain_name VARCHAR(30) UNIQUE NOT NULL -- Полное название (Ethereum, Bitcoin)
-);
+); 
 
 -- Пользователи системы
 CREATE TABLE users (
@@ -51,7 +51,7 @@ CREATE TABLE tokens (
 -- Баланс токена на конкретном кошельке
 CREATE TABLE balances (
     token_id SMALLINT NOT NULL REFERENCES tokens(id) -- Какой токен
-        ON DELETE CASCADE ON UPDATE RESTRICT,
+        ON DELETE RESTRICT ON UPDATE RESTRICT,
     wallet_address VARCHAR(70) NOT NULL REFERENCES wallets(address) -- У какого кошелька
         ON DELETE CASCADE ON UPDATE RESTRICT,
     amount NUMERIC(20, 8) NOT NULL,            -- Количество токенов
@@ -98,7 +98,8 @@ CREATE TABLE internal_transactions (
         ON DELETE RESTRICT ON UPDATE RESTRICT,
     transaction_status_id SMALLINT NOT NULL REFERENCES transaction_statuses(id)
         ON DELETE RESTRICT ON UPDATE RESTRICT,
-    token_id SMALLINT NOT NULL REFERENCES tokens(id),
+    token_id SMALLINT NOT NULL REFERENCES tokens(id)
+        ON DELETE RESTRICT ON UPDATE RESTRICT,
     amount NUMERIC(20, 8) NOT NULL,
     fee NUMERIC(20, 8) NOT NULL,
     updated_at TIMESTAMP WITHOUT TIME ZONE,
